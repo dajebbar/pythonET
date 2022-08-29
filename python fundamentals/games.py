@@ -1,6 +1,6 @@
-game = [[1, 1, 1],
+game = [[1, 1, 0],
         [1, 2, 0],
-        [2, 2, 0],]
+        [2, 2, 2],]
 
 
 def game_board(game_map, player=0, row=0, column=0, just_display=False):
