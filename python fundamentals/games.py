@@ -1,6 +1,6 @@
-game = [[1, 1, 1],
-        [1, 2, 0],
-        [0, 2, 4],]
+game = [[1, 0, 1],
+        [1, 2, 1],
+        [0, 2, 1],]
 
 
 def game_board(game_map, player=0, row=0, column=0, just_display=False):
@@ -19,14 +19,12 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
                 print(f'Something went wrong! {e}')
 
 def win(game):
-        column = list(range(len(game)))
-        
         for row in game:
                 # print(row)
                 if row.count(row[0]) == len(row) and row[0] != 0:
                         print('winner!')
                 
-        for col in column:
+        for col in range(len(game)):
                 check = []
                 for row in game:
                         check.append(row[col])
