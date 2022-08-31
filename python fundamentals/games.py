@@ -1,6 +1,6 @@
-game = [[1, 1, 0],
+game = [[1, 1, 1],
         [1, 2, 0],
-        [2, 2, 2],]
+        [0, 2, 4],]
 
 
 def game_board(game_map, player=0, row=0, column=0, just_display=False):
@@ -13,16 +13,28 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
                         
                 return game_map  
         except IndexError as e:
-                print(f'Error: meke sure you input row/column as 0 1 or 2! {e}') 
+                print(f'Error: make sure you input row/column as 0 1 or 2! {e}') 
                 return False
         except Exception as e:
                 print(f'Something went wrong! {e}')
 
 def win(game):
+        column = list(range(len(game)))
+        
         for row in game:
                 # print(row)
                 if row.count(row[0]) == len(row) and row[0] != 0:
                         print('winner!')
+                
+        for col in column:
+                check = []
+                for row in game:
+                        check.append(row[col])
+                if check.count(check[0]) == len(check) and check[0] != 0:
+                        print('winner!')
+                
+                        
+                
         
 
 game = game_board(game, just_display=True)
