@@ -36,7 +36,7 @@ def win(game):
         for i in range(len(game)):
             diags.append(game[i][i])
         if diags.count(diags[0]) == len(diags) and diags[0] != 0:
-                    print('winner!')
+                    print(f"Player {diags[0]} has won Diagonally (/)")
         
         rev_diags = []
         for idx, row in enumerate(reversed(range(len(game)))):
