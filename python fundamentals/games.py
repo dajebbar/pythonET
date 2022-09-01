@@ -24,13 +24,14 @@ def win(game):
                 # print(row)
                 if row.count(row[0]) == len(row) and row[0] != 0:
                         print(f"Player {row[0]} is the winner horizontally!")
+        # Vertical
         check = []       
         for col in range(len(game)):
                 for row in game:
                         check.append(row[col])
                 if check.count(check[0]) == len(check) and check[0] != 0:
-                        print('winner!')
-                        
+                        print(f"Player {check[0]} is the winner vertically!")
+        # Diagonal \       
         diags = []
         for i in range(len(game)):
             diags.append(game[i][i])
