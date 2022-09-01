@@ -12,3 +12,8 @@ Python series tutorial
 - Function Parameters and Typing
 - Mutability
 - Error Handling
+- Horizontal Winners
+- Vertical Winnners
+- Diagonal Winners
+- Bringing Things Together
+- Wrapping up Tic Tac Toe
