@@ -1,5 +1,5 @@
 game = [[2, 0, -2],
-        [1, 2, 1],
+        [1, -2, 1],
         [-2, 2, 2],]
 
 
@@ -35,7 +35,14 @@ def win(game):
             diags.append(game[i][i])
         if diags.count(diags[0]) == len(diags) and diags[0] != 0:
                     print('winner!')
-                #     break
+        
+        rev_diags = []
+        for idx, row in enumerate(reversed(range(len(game)))):
+            rev_diags.append(game[row][idx])
+        if rev_diags.count(rev_diags[0]) == len(rev_diags) and rev_diags[0] != 0:
+                print('winner!')
+                    
+                        
             
         
                 
