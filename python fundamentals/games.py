@@ -19,10 +19,11 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
                 print(f'Something went wrong! {e}')
 
 def win(game):
+        # Horizontal
         for row in game:
                 # print(row)
                 if row.count(row[0]) == len(row) and row[0] != 0:
-                        print('winner!')
+                        print(f"Player {row[0]} is the winner horizontally!")
         check = []       
         for col in range(len(game)):
                 for row in game:
