@@ -57,6 +57,7 @@ while play:
         game = game_board(game, just_display=True)
         while not game_won:
                 current_player = next(players_choice)
+                print(f'current player: {current_player}')
                 column_choice = int(input('What column do you want to play? (0 1 2) >> ' ))
                 row_choice = int(input('What row do you want to play? (0 1 2) >> ' ))
                 game = game_board(game, current_player, row_choice, column_choice)
