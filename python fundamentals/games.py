@@ -32,6 +32,7 @@ def win(game):
                 # print(row)
                 if all_same(row):
                         print(f"Player {row[0]} is the winner horizontally!")
+                        return True
         # Vertical      
         for col in range(len(game)):
                 check = [] 
@@ -39,18 +40,23 @@ def win(game):
                         check.append(row[col])
                 if all_same(check):
                         print(f"Player {check[0]} is the winner vertically!")
+                        return True
         # Diagonal \       
         diags = []
         for i in range(len(game)):
             diags.append(game[i][i])
         if all_same(diags):
                     print(f"Player {diags[0]} has won Diagonally (/)")
+                    return True
         # Diagonal /
         rev_diags = []
         for idx, row in enumerate(reversed(range(len(game)))):
             rev_diags.append(game[row][idx])
         if all_same(rev_diags):
                 print(f"Player {rev_diags[0]} has won Diagonally (\\)")
+                return True
+        
+        return False
                     
                         
             
