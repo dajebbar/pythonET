@@ -21,29 +21,35 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
                 return game_map, False
 
 def win(game):
+        
+        def all_same(lst):
+                if lst.count(lst[0]) == len(lst) and lst[0] != 0:
+                        return True
+                else:
+                        return False
         # Horizontal
         for row in game:
                 # print(row)
-                if row.count(row[0]) == len(row) and row[0] != 0:
+                if all_same(row):
                         print(f"Player {row[0]} is the winner horizontally!")
         # Vertical      
         for col in range(len(game)):
                 check = [] 
                 for row in game:
                         check.append(row[col])
-                if check.count(check[0]) == len(check) and check[0] != 0:
+                if all_same(check):
                         print(f"Player {check[0]} is the winner vertically!")
         # Diagonal \       
         diags = []
         for i in range(len(game)):
             diags.append(game[i][i])
-        if diags.count(diags[0]) == len(diags) and diags[0] != 0:
+        if all_same(diags):
                     print(f"Player {diags[0]} has won Diagonally (/)")
         # Diagonal /
         rev_diags = []
         for idx, row in enumerate(reversed(range(len(game)))):
             rev_diags.append(game[row][idx])
-        if rev_diags.count(rev_diags[0]) == len(rev_diags) and rev_diags[0] != 0:
+        if all_same(rev_diags):
                 print(f"Player {rev_diags[0]} has won Diagonally (\\)")
                     
                         
