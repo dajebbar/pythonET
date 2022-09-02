@@ -49,6 +49,15 @@ while play:
         game = [[0, 0, 0],
                 [0, 0, 0],
                 [0, 0, 0],]
+        
+        game_won = False
+        game = game_board(game, just_display=True)
+        while not game_won:
+                current_player = 1
+                column_choice = int(input('What columns do you want to play? (0 1 2) >> ' ))
+                row_choice = int(input('What ro do you want to play? (0 1 2) >> ' ))
+                game = game_board(game, current_player, row_choice, column_choice)
+                
    
 
 # game = game_board(game, just_display=True)
