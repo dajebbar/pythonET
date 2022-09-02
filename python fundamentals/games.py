@@ -3,6 +3,9 @@ import itertools
 
 def game_board(game_map, player=0, row=0, column=0, just_display=False):
         try:
+                if game_map[row][column] != 0:
+                        print('This cas is occupado! Choose another.')
+                        return False
                 print("   0  1  2")
                 if not just_display:
                         game_map[row][column] = player
@@ -15,6 +18,7 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
                 return False
         except Exception as e:
                 print(f'Something went wrong! {e}')
+                return False
 
 def win(game):
         # Horizontal
@@ -58,9 +62,14 @@ while play:
         while not game_won:
                 current_player = next(players_choice)
                 print(f'current player: {current_player}')
-                column_choice = int(input('What column do you want to play? (0 1 2) >> ' ))
-                row_choice = int(input('What row do you want to play? (0 1 2) >> ' ))
-                game = game_board(game, current_player, row_choice, column_choice)
+                played = False
+                
+                while not played:
+                        column_choice = int(input('What column do you want to play? (0 1 2) >> ' ))
+                        row_choice = int(input('What row do you want to play? (0 1 2) >> ' ))
+                        game = game_board(game, current_player, row_choice, column_choice)
+                        if game:
+                                played = True
                 
    
 
