@@ -6,7 +6,8 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
                 if game_map[row][column] != 0:
                         print('This cas is occupado! Choose another.')
                         return game_map, False
-                print("   0  1  2")
+                # print("   0  1  2")
+                print("   " + "  ".join(str(i) for i in range(len(game))))
                 if not just_display:
                         game_map[row][column] = player
                 for count, row in enumerate(game_map):
@@ -65,9 +66,9 @@ def win(game):
 play = True
 players_choice = itertools.cycle([1, 2])
 while play:
-        game = [[0, 0, 0],
-                [0, 0, 0],
-                [0, 0, 0],]
+        game = [[0,  0,  0],
+                [0,  0,  0],
+                [0,  0,  0],]
         
         game_won = False
         game, _ = game_board(game, just_display=True)
