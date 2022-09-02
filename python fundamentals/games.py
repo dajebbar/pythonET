@@ -66,9 +66,11 @@ def win(game):
 play = True
 players_choice = itertools.cycle([1, 2])
 while play:
-        game = [[0,  0,  0],
+        game_size = int(input('What size game of Tic Tac Toe? >> '))
+        game = [[0 for i in range(game_size)] for i in range(game_size)]
+        '''game = [[0,  0,  0],
                 [0,  0,  0],
-                [0,  0,  0],]
+                [0,  0,  0],]'''
         
         game_won = False
         game, _ = game_board(game, just_display=True)
