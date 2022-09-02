@@ -1,8 +1,3 @@
-game = [[2, 1, 2],
-        [0, 1, 1],
-        [2, 1, 2],]
-
-
 def game_board(game_map, player=0, row=0, column=0, just_display=False):
         try:
                 print("   0  1  2")
@@ -48,14 +43,20 @@ def win(game):
             
         
                 
-        
+play = True
+players = [1, 2]    
+while play:
+        game = [[0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],]
+   
 
-game = game_board(game, just_display=True)
+# game = game_board(game, just_display=True)
 # print(game)
-print()
+# print()
 # game = game_board(game_board, 2, 5, 1)
 # game[1][1] = 1
 # print(game)
 
-game = win(game)
+# game = win(game)
 
