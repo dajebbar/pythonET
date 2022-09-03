@@ -17,3 +17,9 @@ Python series tutorial
 - Diagonal Winners
 - Bringing Things Together
 - Wrapping up Tic Tac Toe
+---
+## Python ADV:
+- String Concatenation and Formatting
+- Argparse for CLI
+- List comprehension and generator expressions
+
