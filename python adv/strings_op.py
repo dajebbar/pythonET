@@ -9,8 +9,3 @@ for name in names:
     # print(statement)
     
 
-import os
-
-file_loc = 'python adv/loc'
-file_name = 'exp.txt'
-print(file_loc + '/' + file_name) # not the correct method
